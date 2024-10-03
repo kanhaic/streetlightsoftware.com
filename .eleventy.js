@@ -1,3 +1,5 @@
+const htmlmin = require("html-minifier");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
 
@@ -11,5 +13,17 @@ module.exports = function (eleventyConfig) {
       output: "_site",
       include: "includes",
     },
+    addTransform: "htmlmin",
+    transform: function(content, outputPath) {
+      if(outputPath && outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        });
+        return minified;
+      }
+      return content;
+    }
   };
 };

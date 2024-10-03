@@ -9,7 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "html-minifier": "^4.0.0"
   }
 }
