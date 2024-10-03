@@ -1,0 +1,7 @@
+/*! Place your custom styles here */
+
+.feature-8 img.rounded-circle {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
